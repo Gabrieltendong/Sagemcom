@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="66779" started-at="2021-10-06T23:43:31Z" finished-at="2021-10-06T23:44:37Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sagemcom.runners.TestRunner@6ee52dcd]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Surefire test" duration-ms="66779" started-at="2021-10-06T23:43:31Z" finished-at="2021-10-06T23:44:37Z">
+      <class name="com.sagemcom.runners.TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.sagemcom.runners.TestRunner@6ee52dcd]" name="setUpClass" is-config="true" duration-ms="2062" started-at="2021-10-06T23:43:31Z" finished-at="2021-10-06T23:43:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="beforeTest(java.lang.String, java.lang.String)[pri:0, instance:com.sagemcom.runners.TestRunner@6ee52dcd]" name="beforeTest" is-config="true" duration-ms="24415" started-at="2021-10-06T23:43:33Z" finished-at="2021-10-06T23:43:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sagemcom.runners.TestRunner@6ee52dcd]" name="runScenario" duration-ms="22847" started-at="2021-10-06T23:43:57Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-10-06T23:44:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Opening an empty dialogue box"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Minor Bug]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertFalse(Assert.java:65)
+at org.testng.Assert.assertFalse(Assert.java:75)
+at com.sagemcom.steps.EngagementsStep.lambda$new$1(EngagementsStep.java:26)
+at ✽.Presence of a dialogue box(file:///C:/Users/Gabriel/Documents/PAWK/Projets/Sagemcom/src/test/resources/features/minorBug.feature:9)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.sagemcom.runners.TestRunner@6ee52dcd]" name="tearDown" is-config="true" duration-ms="9652" started-at="2021-10-06T23:44:20Z" finished-at="2021-10-06T23:44:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.sagemcom.runners.TestRunner@6ee52dcd]" name="tearDownClass" is-config="true" duration-ms="7743" started-at="2021-10-06T23:44:30Z" finished-at="2021-10-06T23:44:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.sagemcom.runners.TestRunner -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

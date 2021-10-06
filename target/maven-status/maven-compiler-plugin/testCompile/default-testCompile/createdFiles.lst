@@ -1,0 +1,4 @@
+com\sagemcom\runners\TestRunner.class
+com\sagemcom\steps\HomeStep.class
+com\sagemcom\runners\BaseRunner.class
+com\sagemcom\steps\EngagementsStep.class

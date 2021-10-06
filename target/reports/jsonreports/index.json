@@ -1,0 +1,87 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-10-06T23:43:59.411Z",
+        "line": 13,
+        "name": "Opening an empty dialogue box",
+        "description": "",
+        "id": "minor-bug;opening-an-empty-dialogue-box;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 19368000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Go to the page https://www.sagemcom.com/fr/engagements",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://www.sagemcom.com/fr/engagements",
+                  "offset": 15
+                }
+              ],
+              "location": "com.sagemcom.steps.EngagementsStep.\u003cinit\u003e(EngagementsStep.java:15)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 959000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Click on \"Nos certifications\"",
+            "match": {
+              "location": "com.sagemcom.steps.EngagementsStep.\u003cinit\u003e(EngagementsStep.java:21)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 23000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Go back to the tab of the page \"Engagements\"",
+            "match": {
+              "location": "com.sagemcom.steps.EngagementsStep.\u003cinit\u003e(EngagementsStep.java:23)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected [false] but found [true]\r\n\tat org.testng.Assert.fail(Assert.java:96)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\r\n\tat org.testng.Assert.assertFalse(Assert.java:65)\r\n\tat org.testng.Assert.assertFalse(Assert.java:75)\r\n\tat com.sagemcom.steps.EngagementsStep.lambda$new$1(EngagementsStep.java:26)\r\n\tat ✽.Presence of a dialogue box(file:///C:/Users/Gabriel/Documents/PAWK/Projets/Sagemcom/src/test/resources/features/minorBug.feature:9)\r\n",
+              "duration": 141000000,
+              "status": "failed"
+            },
+            "line": 9,
+            "name": "Presence of a dialogue box",
+            "match": {
+              "location": "com.sagemcom.steps.EngagementsStep.\u003cinit\u003e(EngagementsStep.java:25)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@bug_1661"
+          },
+          {
+            "name": "@severity\u003dminor"
+          }
+        ]
+      }
+    ],
+    "name": "Minor Bug",
+    "description": "",
+    "id": "minor-bug",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/minorBug.feature",
+    "tags": []
+  }
+]

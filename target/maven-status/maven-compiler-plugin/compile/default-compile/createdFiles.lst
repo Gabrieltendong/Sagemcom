@@ -1,0 +1,14 @@
+com\sagemcom\config\PropertiesConfig.class
+com\sagemcom\context\ScenarioContext.class
+com\sagemcom\Enum\Context.class
+com\sagemcom\pageObjects\EngagementsPage.class
+com\sagemcom\utils\AllureFileManager.class
+com\sagemcom\config\Configuration.class
+com\sagemcom\driverManager\WebDriverManager.class
+com\sagemcom\Enum\Urls.class
+com\sagemcom\drivers\DriverFactory.class
+com\sagemcom\config\Properties.class
+com\sagemcom\Enum\Device.class
+com\sagemcom\drivers\AbsWebDriverImpl.class
+com\sagemcom\pageObjects\Page.class
+com\sagemcom\pageObjects\HomePage.class
