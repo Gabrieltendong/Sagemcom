@@ -15,5 +15,12 @@ public class HomeStep implements En {
 
         When("Click on \"smart city\"", homePage::clickOnSmartCity);
 
+        When("Fly over the link \"Activitéz\"", homePage::hoverActivityLink);
+
+        Then("The cursor changes to a text selector", ()-> {
+            homePage.saveScreenShotPNG();
+            Assert.assertTrue(homePage.ispPointerCursor());
+        });
+
     }
 }
