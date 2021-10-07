@@ -11,3 +11,10 @@ Feature: Minor Bug
     Examples:
       | engagements                             |
       | https://www.sagemcom.com/fr/engagements |
+
+  @bug_1666
+  @severity=minor
+  Scenario: No pointer when hovering over a link in the navigation bar
+    Given Go to Sagemcom homepage
+    When  Fly over the link "Activitéz"
+    Then  The cursor changes to a text selector
