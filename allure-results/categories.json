@@ -1,1 +1,0 @@
-[{"name":"Ignored tests","matchedStatuses":["skipped"]},{"name":"Infrastructure problems","messageRegex":".*bye-bye.*","matchedStatuses":["broken","failed"]},{"name":"Outdated tests","traceRegex":".*FileNotFoundException.*","matchedStatuses":["broken"]},{"name":"KO tests","matchedStatuses":["failed"]},{"name":"Error during test execution","matchedStatuses":["broken"]}]
