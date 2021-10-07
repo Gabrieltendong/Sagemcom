@@ -1,0 +1,10 @@
+#directory files
+local_driver/
+target/
+allure-results/
+
+#intellij project files
+.idea/
+*.iml
+
+*.log
