@@ -8,7 +8,12 @@ public class HomeStep implements En {
 
     public HomeStep(HomePage homePage){
 
-        Given("user connect to the homePage", homePage::openHomePage);
+        Given("Go to Sagemcom homepage", ()-> {
+            homePage.openHomePage();
+            homePage.handleCookie();
+        });
+
+        When("Click on \"smart city\"", homePage::clickOnSmartCity);
 
     }
 }
