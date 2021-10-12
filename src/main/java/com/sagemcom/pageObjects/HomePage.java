@@ -36,9 +36,7 @@ public class HomePage extends Page{
     }
 
     public boolean ispPointerCursor(){
-        if(link_activity.getCssValue("cursor").contains("pointer"))
-            return true;
-        return false;
+        return link_activity.getCssValue("cursor").contains("pointer");
     }
 
 }

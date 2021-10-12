@@ -13,11 +13,7 @@ public class SmartCityPage extends Page{
     }
 
     public boolean pageIsNotFound(){
-        String url = driver.getCurrentUrl();
-        if(url.contains("404")){
-            return true;
-        }
-        return false;
+        return driver.getCurrentUrl().contains("404");
     }
 
 }
