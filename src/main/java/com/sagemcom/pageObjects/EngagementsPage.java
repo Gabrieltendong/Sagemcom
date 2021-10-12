@@ -24,8 +24,7 @@ public class EngagementsPage extends Page{
     }
 
     public boolean modalIsDisplay(){
-        if(myModal.isDisplayed()) return true;
-        return false;
+        return myModal.isDisplayed();
     }
 
 }

@@ -19,3 +19,16 @@ Feature: Major or Critical bug
     Examples:
       |incident                      | search_term  |
       |https://incident.sagemcom.com/| harcèlement  |
+
+  @bug_1713
+  @severity=critical
+  Scenario Outline: Bad redirection
+    Given  Go to the page <incident>
+    And    Enter the <reference> and <password>
+    When   Click on "Envoyer"
+    And    Scroll down to the buttom of the page and click on one of the buttom "Quitter sans modifications"
+    Then   Display of a blank page
+
+    Examples:
+      | incident                      | reference         | password        |
+      | https://incident.sagemcom.com/| 2021-52804330-Inc | lQzPoSvT2Ga7xFk |
