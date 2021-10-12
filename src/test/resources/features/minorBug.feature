@@ -33,3 +33,15 @@ Feature: Minor Bug
     Examples:
       |incident                      | country   | first_name    | last_name   | email            | phone_number    | link      | description           | start_date    | end_date      |
       |https://incident.sagemcom.com/| Albania  | Paul           | Alain       | paul@gmail.com   | 0612345678      | Recipient  | some description      | 15-10-2021    | 08-10-2021    |
+
+
+  @bug_1722
+  @severity=minor
+  Scenario Outline: Contract type not visisble
+    Given Go to the page <carriere>
+    When  Clik on "Type de contract" in the filter
+    Then  The third checkbox has no text
+
+    Examples:
+      |carriere                             |
+      |https://www.sagemcom.com/V02/carriere|
