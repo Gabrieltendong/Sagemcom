@@ -27,10 +27,14 @@ Go to
 
 Firstly you need to add the webdrivers executables in [local_driver](local_driver).
 
-####### [config.properties](config/config.properties)
+#### [config.properties](config/config.properties)
+
 allows you to change thimgs like the `browser`and the `device`
-####### [urls.properties](config/urls.properties)
+
+#### [urls.properties](config/urls.properties)
+
 allows you to change and manage your `environments`
+
 ***********
 hope this will be useful for you 😉
 *****************
