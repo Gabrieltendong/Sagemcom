@@ -17,9 +17,16 @@ public class HomeStep implements En {
 
         When("Fly over the link \"Activitéz\"", homePage::hoverActivityLink);
 
+        When("Click on the German icon language to change the site language in german", homePage::clickOnDeLang);
+
         Then("The cursor changes to a text selector", ()-> {
             homePage.saveScreenShotPNG();
             Assert.assertTrue(homePage.ispPointerCursor());
+        });
+
+        Then("Some texts in the navigation bar remain in english", ()-> {
+            homePage.saveScreenShotPNG();
+            Assert.assertFalse(homePage.isBadTranslate());
         });
 
     }

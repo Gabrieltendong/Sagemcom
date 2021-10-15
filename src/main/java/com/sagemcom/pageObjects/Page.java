@@ -5,6 +5,7 @@ import com.sagemcom.config.Properties;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import io.restassured.http.Method;
+import org.apache.tika.language.LanguageIdentifier;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.ByteArrayInputStream;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import static io.restassured.RestAssured.given;
@@ -136,7 +138,6 @@ public class Page {
     }
 
     protected void clickOnJs(WebElement element){
-//        checkVisibilityElement(element);
         js.executeScript("arguments[0].click();", element);
     }
 
@@ -149,9 +150,22 @@ public class Page {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    public boolean pageIsFound(){
-        int statusCode = given().request(Method.GET, driver.getCurrentUrl()).statusCode();
+    protected boolean verifyLink(String url){
+        int statusCode = given().request(Method.GET, url).statusCode();
         return statusCode == 200 ? true : false;
+    }
+
+    public boolean pageIsFound(){
+        return verifyLink(driver.getCurrentUrl());
+    }
+
+    public String  getLanguage(String text){
+        LanguageIdentifier identifier = new LanguageIdentifier(text);
+        return identifier.getLanguage();
+    }
+
+    public void waitLoadPage(){
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Attachment(value = "screenshot", type = "image/png")

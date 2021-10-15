@@ -13,6 +13,9 @@ public class CareerPage extends Page{
     @FindBy(css = "div#collapseTwo ul>li label")
     private List<WebElement> list_type_contrat;
 
+    @FindBy(css = "footer>div.container")
+    private WebElement footer;
+
     public void clickOnTypeContrat(){
         clickOn(type_contrat);
     }
@@ -22,6 +25,14 @@ public class CareerPage extends Page{
             if(typeContrat.getText().length() == 0) return false;
         }
         return true;
+    }
+
+    public void scrollToFooter(){
+        scrollTo(footer);
+    }
+
+    public boolean iscorrectEncodeChar(){
+        return !footer.getText().contains("�");
     }
 
 }
