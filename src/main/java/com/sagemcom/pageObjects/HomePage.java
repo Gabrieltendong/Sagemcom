@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class HomePage extends Page{
 
     @FindBy(css = "div#cookiesjsr button.important")
@@ -17,6 +19,12 @@ public class HomePage extends Page{
 
     @FindBy(css = "li[data-id=\"ba8acabe-f1e1-46ff-b57d-0892d29d09d1\"]>span")
     private WebElement link_activity;
+
+    @FindBy(css = "ul.tt-menu-nav a[title=\"de\"]")
+    private WebElement de_lang;
+
+    @FindBy(id = "menuCollapse")
+    private WebElement menu;
 
     public void openHomePage(){
         get(Properties.Config.getEnvironment());
@@ -37,6 +45,15 @@ public class HomePage extends Page{
 
     public boolean ispPointerCursor(){
         return link_activity.getCssValue("cursor").contains("pointer");
+    }
+
+    public void clickOnDeLang(){
+        clickOn(de_lang);
+    }
+
+    public boolean isBadTranslate() throws InterruptedException {
+       Thread.sleep(10000);
+        return !getLanguage(menu.getText()).contains("de");
     }
 
 }

@@ -42,6 +42,75 @@ Feature: Minor Bug
     When  Clik on "Type de contract" in the filter
     Then  The third checkbox has no text
 
-    Examples:
-      |carriere                             |
-      |https://www.sagemcom.com/V02/carriere|
+  Examples:
+    |carriere                             |
+    |https://www.sagemcom.com/V02/carriere|
+
+  @bug_1727
+  @severity=minor
+  Scenario Outline: Character encoing problem
+    Given Go to the page <carriere>
+    When  Scroll down to the footer
+    Then  Accented characters are replaced in texts by symbols
+
+  Examples:
+    |carriere                             |
+    |https://www.sagemcom.com/V02/carriere|
+
+  @bug_1730
+  @severity=minor
+  Scenario Outline: Equipement image not displayed
+    Given Go to the page <controle-vocal>
+    When  Click on the right  chevron of the carousel
+    Then  No image displayed
+
+  Examples:
+    |controle-vocal                                                                                          |
+    |https://www.sagemcom.com/fr/solutions-audio-video/software-solutions/controle-vocal-et-assistant-vocaux |
+
+  @bug_1744
+  @severity=minor
+  Scenario Outline: Duplication amoung decoder / sounds types
+    Given Go to the page <support>
+    When Scroll down to the section "Recherche par catégorie" and click on "Décodeurs-Son"
+    And   Unroll the list "Gamme"
+    Then  "Decodeur satellite" displayed twice
+
+  Examples:
+    |support                        |
+    |https://support.sagemcom.com/fr|
+
+  @bug_1766
+  @severity=minor
+  Scenario Outline: Translation error
+    Given  Go to the homepage
+    And    Click on "recevoir vos commandes d'achats et saisir vos confirmations application Portail-2G"
+    When   Click on "Nouveau fournisseurs? Se référencer"
+    And    Change the <language> page on top right in Italy or in Germany
+    Then   Some items of the page are not in the select language
+
+  Examples:
+    | language |
+    | Allemand |
+    | Italien  |
+
+
+  @bug_1801
+  @severity=minor
+  Scenario Outline: Social network icons not displayed
+    Given  Go to the page <smart-city>
+    When   Scroll to the footer
+    Then   Social network icons are replaced by squares
+
+  Examples:
+    |smart-city                             |
+    |https://sagemcom.com/V02/fr/smart-city/|
+
+  @bug_1650
+  @severity=minor
+  Scenario: Untranslated text in German
+    Given Go to Sagemcom homepage
+    When  Click on the German icon language to change the site language in german
+    Then  Some texts in the navigation bar remain in english
+
+
