@@ -14,6 +14,12 @@ public class SupportPage extends Page{
     @FindBy(id = "edit-field-gamme-de-produit")
     private WebElement select_decoder;
 
+    @FindBy(css = "div.service-box>div.linkMore a")
+    private List<WebElement> readmore;
+
+    @FindBy(id = "views-bootstrap-family-block-block-1")
+    private WebElement block_views;
+
     public void clickOnDecoderLink(){
         navigateTo(decoder);
     }
@@ -31,6 +37,15 @@ public class SupportPage extends Page{
             }
         }
         return false;
+    }
+
+    public boolean isEnglishText(){
+        return readmore.stream()
+                .anyMatch(element -> getLanguage(element.getText()).contains("fr"));
+    }
+
+    public void scrollToBloc() {
+        scrollTo(block_views);
     }
 
 }

@@ -29,5 +29,10 @@ public class HomeStep implements En {
             Assert.assertFalse(homePage.isBadTranslate());
         });
 
+        Then("Some items are in english but the site language is french", ()-> {
+            homePage.saveScreenShotPNG();
+            Assert.assertTrue(homePage.isDifferentLanguage());
+        });
+
     }
 }

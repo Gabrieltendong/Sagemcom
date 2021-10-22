@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class HomePage extends Page{
@@ -25,6 +26,12 @@ public class HomePage extends Page{
 
     @FindBy(id = "menuCollapse")
     private WebElement menu;
+
+    @FindBy(css = "div.footer-bottom-col-left a")
+    private WebElement text_reset_cookie;
+
+    @FindBy(css = "li[data-id=\"c5366493-e63f-4516-846f-072116cb5dd8\"]")
+    private WebElement text_header;
 
     public void openHomePage(){
         get(Properties.Config.getEnvironment());
@@ -54,6 +61,11 @@ public class HomePage extends Page{
     public boolean isBadTranslate() throws InterruptedException {
        Thread.sleep(10000);
         return !getLanguage(menu.getText()).contains("de");
+    }
+
+    public boolean isDifferentLanguage(){
+        return getLanguage(text_header.getText()).contains("fr")
+                || getLanguage(text_reset_cookie.getText()).contains("fr");
     }
 
 }

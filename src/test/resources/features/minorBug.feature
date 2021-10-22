@@ -113,4 +113,21 @@ Feature: Minor Bug
     When  Click on the German icon language to change the site language in german
     Then  Some texts in the navigation bar remain in english
 
+  @bug_1717
+  @severity=minor
+  Scenario: Some items are displayed in the wrong language
+    Given Go to Sagemcom homepage
+    Then  Some items are in english but the site language is french
+
+  @bug_1743
+  @severity=minor
+  Scenario Outline: Presence of English text on the French version
+    Given  Go to the page <support>
+    When   Scroll down to the section "recherche par catégorie"
+    Then   There is "Read more" under each category
+
+    Examples:
+      |support                        |
+      |https://support.sagemcom.com/fr|
+
 
